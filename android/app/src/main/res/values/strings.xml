@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Class Bell</string>
+    <string name="title_activity_main">Class Bell</string>
+    <string name="package_name">com.classbell.app</string>
+    <string name="custom_url_scheme">com.classbell.app</string>
+</resources>

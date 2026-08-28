@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+www/
+build/
+dist/
+
+# Capacitor
+android/app/build/
+android/build/
+android/.gradle/
+ios/build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# APK files (built artifacts)
+*.apk
+*.aab
+
+# XLSX lock files
+~$*

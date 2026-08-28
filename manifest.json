@@ -1,0 +1,9 @@
+{
+  "name": "课程提醒",
+  "short_name": "课程提醒",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#eef2f4",
+  "theme_color": "#48d6c1",
+  "lang": "zh-CN"
+}

@@ -1,0 +1,13 @@
+{
+  "appId": "com.classbell.app",
+  "appName": "Class Bell",
+  "webDir": "www",
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_launcher",
+      "iconColor": "#488AFF"
+    }
+  }
+}
+  }
+}

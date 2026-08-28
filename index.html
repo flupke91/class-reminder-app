@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>课程提醒</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="topbar-title">上课啦</div>
+        <button id="openSettingsBtn" class="ghost-btn">设置</button>
+      </header>
+
+      <section class="week-panel">
+        <div class="week-main">
+          <div>
+            <div id="termName" class="term-name"></div>
+            <div id="weekLabel" class="week-label"></div>
+          </div>
+          <div class="week-actions">
+            <button id="prevWeekBtn" class="ghost-btn">上一周</button>
+            <button id="todayBtn" class="ghost-btn">回到本周</button>
+            <button id="nextWeekBtn" class="ghost-btn">下一周</button>
+          </div>
+        </div>
+        <div id="weekdayHeader" class="weekday-header"></div>
+      </section>
+
+      <section class="import-panel">
+        <details>
+          <summary>导入课表（JSON / iCal / XLSX / OCR 文本）</summary>
+          <div class="import-body">
+            <div class="row">
+              <label for="importType">导入类型</label>
+              <select id="importType">
+                <option value="json">JSON</option>
+                <option value="ical">iCal (.ics)</option>
+                <option value="xlsx">Excel (.xlsx/.xls)</option>
+                <option value="ocr">OCR 识别文本</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="importFile">文件导入</label>
+              <input id="importFile" type="file" accept=".json,.ics,.xlsx,.xls,.txt,.text" />
+            </div>
+            <div class="row textarea-row">
+              <label for="importText">粘贴内容</label>
+              <textarea id="importText" placeholder="支持直接粘贴 JSON / iCal 文本 / OCR 文本（XLSX 请走文件导入）"></textarea>
+            </div>
+            <div class="row actions-row">
+              <button id="importBtn" class="primary-btn">导入并覆盖</button>
+              <button id="loadSampleBtn" class="ghost-btn">加载示例课表</button>
+            </div>
+            <p class="hint">Excel 直读支持学习通“上课时间地点(原始)”字段；OCR 示例：周一 第1-2节 内科护理学（理论）｜301中班｜蓉江一教</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="timetable-panel">
+        <div id="timetableGrid" class="timetable-grid"></div>
+      </section>
+
+      <section id="emptyNotice" class="empty-notice" hidden>
+        当前周暂无课程数据，请导入课表。
+      </section>
+
+      <section class="reminder-panel">
+        <div class="reminder-header">
+          <h2>提醒预览</h2>
+          <div class="reminder-actions">
+            <button id="toggleLiveReminderBtn" class="ghost-btn">开启浏览器提醒</button>
+            <button id="simulateReminderBtn" class="ghost-btn">模拟今日提醒</button>
+          </div>
+        </div>
+        <div id="reminderLog" class="reminder-log"></div>
+      </section>
+    </main>
+
+    <dialog id="settingsDialog" class="settings-dialog">
+      <form id="settingsForm" method="dialog">
+        <h3>提醒与学期设置</h3>
+        <label>
+          上午汇总提醒时间
+          <input name="morningTime" type="time" required />
+        </label>
+        <label>
+          下午汇总提醒时间
+          <input name="afternoonTime" type="time" required />
+        </label>
+        <label>
+          课前提醒提前（分钟）
+          <input name="beforeMinutes" type="number" min="1" max="30" required />
+        </label>
+        <label>
+          换课间隔阈值（分钟）
+          <input name="gapThresholdMinutes" type="number" min="10" max="180" required />
+        </label>
+        <label>
+          学期名称
+          <input name="termName" type="text" required />
+        </label>
+        <label>
+          学期开始日期（用于周次计算）
+          <input name="termStartDate" type="date" required />
+        </label>
+        <label>
+          今日是否停课（手动节假日）
+          <input name="holidayToday" type="checkbox" />
+        </label>
+
+        <div id="courseToggleList" class="course-toggle-list"></div>
+
+        <menu>
+          <button value="cancel" class="ghost-btn">取消</button>
+          <button id="saveSettingsBtn" value="default" class="primary-btn">保存</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
