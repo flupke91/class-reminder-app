@@ -14,6 +14,19 @@ agent_created: true
 
 前置条件：手机已 root、adb 已连接、已安装「上课啦」App。
 
+## 本地工作副本与打包
+
+开发副本（含 `android/`、`www/`、`node_modules`）里，跑完解析后记得把 Web 资源同步进
+`www/` 再 sync，否则打出来的 APK 还是旧代码：
+
+```bash
+cp app.js index.html styles.css favicon.svg manifest.json bg.jpg icon.jpg courses-final.json www/
+cp vendor/xlsx.full.min.js www/vendor/
+npx cap sync android
+```
+
+`tools/gmu/out/chrome-profile/` 保存着教务系统登录态，下次抓取可直接复用、不用再扫码。
+
 ## 安装
 
 本目录是 skill 的仓库版本，脚本本体在 `tools/gmu/`。使用时把整个目录复制到用户级
