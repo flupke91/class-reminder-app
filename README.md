@@ -136,7 +136,9 @@ node tools/test-parsers.js   # 回归测试：课表合并、字段校验、周�
   已替换为正确的 UTF-8 版本。
 
 另外新增了 `tools/gmu/` —— 赣南医科大学教务系统课表抓取工具（扫码登录，
-详见 [tools/gmu/README.md](tools/gmu/README.md)）。
+详见 [tools/gmu/README.md](tools/gmu/README.md)）。配套的智能体 Skill 在
+`skills/gmu-timetable-fetch/`，复制到 `~/.workbuddy/skills/` 即可让助手直接走完整流程，
+里面也记录了教务接口的坑点。
 
 ## 技术栈
 
