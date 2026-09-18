@@ -113,6 +113,37 @@ npx cap open android
 node tools/test-parsers.js   # 回归测试：课表合并、字段校验、周次检测
 ```
 
+## 构建与发布 APK
+
+环境要求：Node.js + `@capacitor/cli`、`android` 目录所需的 Android SDK（compileSdk 36）、
+JDK（AGP 8.13 + Gradle 8.7，建议 JDK 17/21）。
+
+```bash
+# 1. 同步 Web 资源到 android 工程
+node node_modules/@capacitor/cli/bin/capacitor sync android
+
+# 2. 打包（debug 可直接装到手机；release 用于上架/分享）
+cd android
+./gradlew assembleDebug      # 产物：app/build/outputs/apk/debug/app-debug.apk
+./gradlew assembleRelease   # 产物：app/build/outputs/apk/release/app-release.apk
+```
+
+### 正式签名
+
+`android/keystore.properties`（已在 .gitignore，不入库）放签名信息：
+
+```properties
+storeFile=G:\\...\\classbell-release.keystore
+storePassword=******
+keyAlias=classbell
+keyPassword=******
+```
+
+配好之后 `assembleRelease` 出的包是正式签名（与 debug 包签名不同，覆盖旧版需先卸载）。
+没有这个文件时自动回退 debug 签名，`assembleRelease` 也不会失败。
+
+> 本机 Gradle 8.7 已解压在 `G:\E\Opencodesandbox\gradle-8.7`，可跳过 wrapper 的联网下载直接构建。
+
 ## 更新记录
 
 ### 2026-09-18
