@@ -2,8 +2,16 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Polyfill for structuredClone (not available in older WebView)
+      if (typeof structuredClone === 'undefined') {
+        window.structuredClone = function(obj) {
+          return JSON.parse(JSON.stringify(obj));
+        };
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>课程提醒</title>
+    <title>Class Bell</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="stylesheet" href="./styles.css" />
@@ -60,6 +68,8 @@
         </details>
       </section>
 
+      <section id="staleTermNotice" class="stale-term-notice" hidden></section>
+
       <section class="timetable-panel">
         <div id="timetableGrid" class="timetable-grid"></div>
       </section>
@@ -73,7 +83,7 @@
           <h2>提醒预览</h2>
           <div class="reminder-actions">
             <button id="toggleLiveReminderBtn" class="ghost-btn">开启浏览器提醒</button>
-            <button id="simulateReminderBtn" class="ghost-btn">模拟今日提醒</button>
+            <button id="simulateReminderBtn" class="ghost-btn">测试提醒</button>
           </div>
         </div>
         <div id="reminderLog" class="reminder-log"></div>
@@ -121,7 +131,8 @@
       </form>
     </dialog>
 
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js" defer></script>
+    <!-- xlsx 解析库本地打包：离线/校园网访问不到 CDN 时也能用；加载失败由 app.js 兜底回退 CDN -->
+    <script src="./vendor/xlsx.full.min.js"></script>
+    <script src="./app.js?v=5"></script>
   </body>
 </html>

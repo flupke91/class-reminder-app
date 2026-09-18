@@ -1,6 +1,6 @@
 :root {
   --bg: #eef2f4;
-  --card: #ffffff;
+  --card: rgba(255,255,255,0.55);
   --brand: #48d6c1;
   --brand-deep: #18bfa9;
   --line: #d8dfe5;
@@ -10,6 +10,9 @@
   --grid-cell-h: 72px;
   --grid-head-h: 56px;
   --period-col-w: 54px;
+  --warn: #c2410c;
+  --warn-bg: rgba(255, 237, 213, 0.92);
+  --warn-line: #fdba74;
 }
 
 * {
@@ -19,8 +22,16 @@
 body {
   margin: 0;
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  background: radial-gradient(circle at top, #f8fcff 0%, var(--bg) 60%);
+  background: url('./bg.jpg') center/cover no-repeat fixed;
   color: var(--text);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.35);
+  z-index: -1;
 }
 
 .app {
@@ -28,6 +39,49 @@ body {
   margin: 0 auto;
   min-height: 100dvh;
   padding-bottom: 24px;
+}
+
+/* 学期开始日期过期时的醒目提示 */
+.stale-term-notice {
+  margin: 10px 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--warn-line);
+  border-left: 4px solid var(--warn);
+  border-radius: 12px;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-size: 13px;
+  line-height: 1.6;
+  box-shadow: 0 2px 10px rgba(194, 65, 12, 0.12);
+}
+
+.stale-term-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.stale-term-text b {
+  font-size: 15px;
+}
+
+.warn-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--warn);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.warn-btn:active {
+  opacity: 0.8;
 }
 
 .topbar {
@@ -191,7 +245,7 @@ textarea {
 }
 
 .period-label {
-  background: #f6f8fa;
+  background: rgba(246,248,250,0.5);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   display: flex;
@@ -204,7 +258,7 @@ textarea {
 .grid-cell {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: #fff;
+  background: rgba(255,255,255,0.3);
 }
 
 .grid-cell.today {
@@ -368,4 +422,36 @@ menu {
   .actions-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* In-app notification banner */
+.app-notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+  padding: 16px 20px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-radius: 0 0 16px 16px;
+}
+
+.app-notification.show {
+  transform: translateY(0);
+}
+
+.app-notification-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.app-notification-body {
+  font-size: 13px;
+  opacity: 0.9;
+  line-height: 1.4;
 }

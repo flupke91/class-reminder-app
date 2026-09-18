@@ -38,3 +38,6 @@ npm-debug.log*
 
 # XLSX lock files
 ~$*
+
+# 抓取脚本的产物（含浏览器登录态 profile，不要提交）
+tools/gmu/out/
