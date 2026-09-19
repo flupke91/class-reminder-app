@@ -131,20 +131,58 @@ def main():
         return 1
 
     raw = json.load(open(raw_path, encoding="utf-8"))
-    rows = raw["timetable"]["results"]
+    # 兼容两种 raw 形态：
+    #   1) fetch_timetable.js 产出的 {fetchedAt, timetable:{results}, weekInfo:{zc,days}}
+    #   2) 直接把教务接口响应落盘的裸 {msg, ret, results}
+    if isinstance(raw.get("timetable"), dict) and "results" in raw["timetable"]:
+        rows = raw["timetable"]["results"]
+    else:
+        rows = raw.get("results") or []
+    if not rows:
+        print("原始数据里没有 results，先运行 fetch_timetable.js")
+        return 1
     os.makedirs(OUT, exist_ok=True)
 
     # ---- 学期信息 ----
     terms = sorted({r.get("xnxq", "") for r in rows if r.get("xnxq")})
     term_name = terms[-1] if terms else ""
 
-    fetched = date.fromisoformat(raw["fetchedAt"][:10])
+    # fetchedAt 可能缺失（裸响应），退回用文件的修改时间
+    fetched_raw = raw.get("fetchedAt")
+    if fetched_raw:
+        fetched = date.fromisoformat(fetched_raw[:10])
+    else:
+        fetched = date.fromtimestamp(os.path.getmtime(raw_path))
+
+    # weekInfo 优先取 raw 里的，其次退回同目录的 week-info.json
     week_info = raw.get("weekInfo")
+    if not week_info:
+        cand = os.path.join(OUT, "week-info.json")
+        if os.path.exists(cand):
+            try:
+                w = json.load(open(cand, encoding="utf-8"))
+                if isinstance(w.get("data"), list):
+                    week_info = {"days": w["data"], "zc": w.get("zc")}
+            except Exception:
+                week_info = None
+
     term_start = None
-    if week_info:
-        monday = parse_md(week_info["days"][0]["date"], fetched)
-        if monday:
-            term_start = monday - timedelta(weeks=week_info["zc"] - 1)
+    term_start_note = ""
+    if week_info and week_info.get("days"):
+        zc = week_info.get("zc")
+        if zc:
+            monday = parse_md(week_info["days"][0]["date"], fetched)
+            if monday:
+                term_start = monday - timedelta(weeks=int(zc) - 1)
+        else:
+            # week-info.json 只存了「本周日期」却没记录是第几周，无法推算学期开始日期
+            today = next((d["date"] for d in week_info["days"] if d.get("sfdt")), None)
+            term_start_note = (
+                "本周日期=%s，但原始数据没记录它是第几周（缺少 zc），"
+                "无法推算学期开始日期 —— 请在 App 里用「校准周次」手动填今天是第几周，"
+                "或重新运行 fetch_timetable.js 以获取带 zc 的完整 weekInfo"
+                % (today or "未知")
+            )
 
     # ---- 解析每门课 ----
     all_slots = []
