@@ -41,3 +41,11 @@ npm-debug.log*
 
 # 抓取脚本的产物（含浏览器登录态 profile，不要提交）
 tools/gmu/out/
+
+# 排查脚本的临时输出（*-out.txt 报告、登录/扫码日志）
+*-out.txt
+qrlog.txt
+loginlog.txt
+qr-done.txt
+login-done.txt
+
