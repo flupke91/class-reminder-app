@@ -66,7 +66,8 @@ def load_weeks():
                     continue
                 for c in d.get("kcxx") or []:
                     name = (c.get("kcmc") or "").strip()
-                    if not name:
+                    # 空格子教务系统会填占位符 "-"，必须丢掉，否则会生成上百条叫「-」的假课
+                    if not name or name in ("-", "—", "－", "无"):
                         continue
                     pts.append({
                         "day": day,
