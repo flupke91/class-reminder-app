@@ -1,9 +1,9 @@
 [
   {
-    "id": "jw-15",
+    "id": "kb-1",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "黄晓峰",
+    "className": "",
     "room": "18合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 1,
@@ -14,11 +14,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-3",
+    "id": "kb-2",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
-    "room": "护理多功能示教室2（章贡护理大楼428）",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "护理多功能示教室2（章贡：护理大楼428）",
     "dayOfWeek": 1,
     "startPeriod": 1,
     "endPeriod": 4,
@@ -28,10 +28,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-54",
+    "id": "kb-3",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 1,
@@ -42,28 +42,41 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-50",
+    "id": "kb-4",
     "name": "精神科护理学",
-    "teacher": "罗珍,待定101,袁水莲（外聘）,江茜,待定106,郑亚楠,待定104,林莉,焦昊然,待定103,温世萍（外聘）",
-    "className": "24级护理4班",
+    "teacher": "郑亚楠,罗珍",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 1,
     "endPeriod": 2,
     "weeks": [
       2,
-      3,
       4,
-      7,
+      7
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-5",
+    "name": "精神科护理学",
+    "teacher": "温世萍（外聘）",
+    "className": "",
+    "room": "老校区讨论室组（章）（5-1，5-2）(5-1讨论室（章贡）,5-2讨论室（章贡）)",
+    "dayOfWeek": 1,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      3,
       9
     ],
     "remindEnabled": true
   },
   {
-    "id": "jw-37",
+    "id": "kb-6",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "刘群A,张文红",
+    "className": "",
     "room": "18合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 3,
@@ -75,11 +88,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-5",
+    "id": "kb-7",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "章贡校区教室组（4-1，4-2）(4-1小班（章贡）,4-2小班（章贡）)",
     "dayOfWeek": 1,
     "startPeriod": 3,
     "endPeriod": 4,
@@ -89,10 +102,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-9",
+    "id": "kb-8",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "温艳萍",
+    "className": "",
     "room": "19合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 3,
@@ -103,24 +116,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-69",
+    "id": "kb-9",
     "name": "老年与康复护理学",
-    "teacher": "陈淑文,潘火英,王萍B,刘明,刘月泉,陈根秀",
-    "className": "24级护理4班",
-    "room": "19合班（章贡）",
-    "dayOfWeek": 1,
-    "startPeriod": 3,
-    "endPeriod": 4,
-    "weeks": [
-      1
-    ],
-    "remindEnabled": true
-  },
-  {
-    "id": "jw-70",
-    "name": "老年与康复护理学",
-    "teacher": "陈淑文,潘火英,王萍B,刘明,刘月泉,陈根秀",
-    "className": "24级护理4班",
+    "teacher": "陈淑文,刘月泉",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 3,
@@ -132,24 +131,25 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-72",
+    "id": "kb-10",
     "name": "老年与康复护理学",
-    "teacher": "陈淑文,潘火英,王萍B,刘明,刘月泉,陈根秀",
-    "className": "24级护理4班",
+    "teacher": "刘明,黄姝红",
+    "className": "",
     "room": "17合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 3,
     "endPeriod": 4,
     "weeks": [
-      3
+      3,
+      11
     ],
     "remindEnabled": true
   },
   {
-    "id": "jw-23",
+    "id": "kb-11",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "鲁玉凤",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 5,
@@ -160,10 +160,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-35",
+    "id": "kb-12",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "刘群A",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 5,
@@ -174,10 +174,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-66",
+    "id": "kb-13",
+    "name": "外科护理学",
+    "teacher": "钟惠琴",
+    "className": "",
+    "room": "老校区讨论室组（章）（5-1，5-2）(5-1讨论室（章贡）,5-2讨论室（章贡）)",
+    "dayOfWeek": 1,
+    "startPeriod": 5,
+    "endPeriod": 6,
+    "weeks": [
+      18
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-14",
     "name": "护理伦理与卫生法律法规",
-    "teacher": "廖建红,杨慧娟,陈睿云,王奕",
-    "className": "24级护理4班",
+    "teacher": "杨慧娟",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 5,
@@ -188,10 +202,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-68",
+    "id": "kb-15",
     "name": "护理伦理与卫生法律法规",
-    "teacher": "廖建红,杨慧娟,陈睿云,王奕",
-    "className": "24级护理4班",
+    "teacher": "王奕",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 5,
@@ -202,10 +216,53 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-4",
+    "id": "kb-16",
+    "name": "护理心理学",
+    "teacher": "叶红燕",
+    "className": "",
+    "room": "护理讨论室教室组(护理讨论室3（章贡：护理大楼412）,护理讨论室5（章贡：护理大楼701）)",
+    "dayOfWeek": 1,
+    "startPeriod": 5,
+    "endPeriod": 7,
+    "weeks": [
+      9,
+      10
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-17",
+    "name": "护理心理学",
+    "teacher": "叶红燕",
+    "className": "",
+    "room": "护理讨论室教室组(护理讨论室3（章贡：护理大楼412）,护理讨论室5（章贡：护理大楼701）)",
+    "dayOfWeek": 1,
+    "startPeriod": 5,
+    "endPeriod": 8,
+    "weeks": [
+      12
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-18",
+    "name": "护理心理学",
+    "teacher": "叶红燕",
+    "className": "",
+    "room": "护理形体训练室（章贡：护理大楼702）",
+    "dayOfWeek": 1,
+    "startPeriod": 5,
+    "endPeriod": 7,
+    "weeks": [
+      14
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-19",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "温艳萍",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 7,
@@ -216,10 +273,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-62",
+    "id": "kb-20",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "王奕",
+    "className": "",
+    "room": "11合班（章贡）",
+    "dayOfWeek": 1,
+    "startPeriod": 7,
+    "endPeriod": 8,
+    "weeks": [
+      8
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-21",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "叶红燕",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 1,
     "startPeriod": 7,
@@ -230,11 +301,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-38",
+    "id": "kb-22",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "刘群A",
+    "className": "",
+    "room": "章贡校区教室组（5-1，5-2，5-3，4-1）(4-1小班（章贡）,5-1讨论室（章贡）,5-2讨论室（章贡）,5-3讨论室（章贡）)",
     "dayOfWeek": 1,
     "startPeriod": 9,
     "endPeriod": 10,
@@ -244,24 +315,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-26",
+    "id": "kb-23",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "15合班（章贡）",
-    "dayOfWeek": 2,
-    "startPeriod": 1,
-    "endPeriod": 2,
-    "weeks": [
-      15
-    ],
-    "remindEnabled": true
-  },
-  {
-    "id": "jw-36",
-    "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "刘群A",
+    "className": "",
     "room": "18合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 1,
@@ -272,24 +329,25 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-42",
+    "id": "kb-24",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "张文红,祁欢,李莉莉A",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 1,
     "endPeriod": 4,
     "weeks": [
-      12
+      12,
+      15
     ],
     "remindEnabled": true
   },
   {
-    "id": "jw-7",
+    "id": "kb-25",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "温艳萍",
+    "className": "",
     "room": "见习场所8（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 1,
@@ -300,10 +358,38 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-49",
+    "id": "kb-26",
+    "name": "急危重症护理学",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "护理多功能示教室2（章贡：护理大楼428）",
+    "dayOfWeek": 2,
+    "startPeriod": 1,
+    "endPeriod": 3,
+    "weeks": [
+      13
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-27",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "杨慧娟",
+    "className": "",
+    "room": "11合班（章贡）",
+    "dayOfWeek": 2,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      3
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-28",
     "name": "精神科护理学",
-    "teacher": "罗珍,待定101,袁水莲（外聘）,江茜,待定106,郑亚楠,待定104,林莉,焦昊然,待定103,温世萍（外聘）",
-    "className": "24级护理4班",
+    "teacher": "郑亚楠,罗珍,袁水莲（外聘）",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 1,
@@ -317,26 +403,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-14",
+    "id": "kb-29",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "15合班（章贡）",
-    "dayOfWeek": 2,
-    "startPeriod": 3,
-    "endPeriod": 4,
-    "weeks": [
-      10,
-      15
-    ],
-    "remindEnabled": true
-  },
-  {
-    "id": "jw-27",
-    "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "12合班（章贡）",
+    "teacher": "祁欢",
+    "className": "",
+    "room": "章贡校区教室组（4-1，4-2）(4-1小班（章贡）,4-2小班（章贡）)",
     "dayOfWeek": 2,
     "startPeriod": 3,
     "endPeriod": 4,
@@ -346,10 +417,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-32",
+    "id": "kb-30",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "邓作梅",
+    "className": "",
     "room": "18合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 3,
@@ -360,10 +431,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-2",
+    "id": "kb-31",
+    "name": "外科护理学",
+    "teacher": "黄晓峰",
+    "className": "",
+    "room": "15合班（章贡）",
+    "dayOfWeek": 2,
+    "startPeriod": 3,
+    "endPeriod": 4,
+    "weeks": [
+      10
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-32",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "孟利敏",
+    "className": "",
     "room": "19合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 3,
@@ -374,10 +459,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-71",
+    "id": "kb-33",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "陈睿云",
+    "className": "",
+    "room": "11合班（章贡）",
+    "dayOfWeek": 2,
+    "startPeriod": 3,
+    "endPeriod": 4,
+    "weeks": [
+      11
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-34",
     "name": "老年与康复护理学",
-    "teacher": "陈淑文,潘火英,王萍B,刘明,刘月泉,陈根秀",
-    "className": "24级护理4班",
+    "teacher": "王萍B",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 3,
@@ -388,24 +487,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-16",
+    "id": "kb-35",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "17合班（章贡）",
-    "dayOfWeek": 2,
-    "startPeriod": 5,
-    "endPeriod": 6,
-    "weeks": [
-      11
-    ],
-    "remindEnabled": true
-  },
-  {
-    "id": "jw-21",
-    "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "曾群英",
+    "className": "",
     "room": "18合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 5,
@@ -416,10 +501,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-29",
+    "id": "kb-36",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "江茜",
+    "className": "",
     "room": "19合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 5,
@@ -430,10 +515,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-39",
+    "id": "kb-37",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "许雪花",
+    "className": "",
     "room": "见习场所6（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 5,
@@ -444,11 +529,25 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-1",
+    "id": "kb-38",
+    "name": "外科护理学",
+    "teacher": "黄晓峰",
+    "className": "",
+    "room": "17合班（章贡）",
+    "dayOfWeek": 2,
+    "startPeriod": 5,
+    "endPeriod": 6,
+    "weeks": [
+      11
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-39",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "孟利敏",
+    "className": "",
+    "room": "章贡校区教室组（5-1，5-2，5-3，4-1）(4-1小班（章贡）,5-1讨论室（章贡）,5-2讨论室（章贡）,5-3讨论室（章贡）)",
     "dayOfWeek": 2,
     "startPeriod": 5,
     "endPeriod": 8,
@@ -458,10 +557,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-65",
+    "id": "kb-40",
+    "name": "急危重症护理学",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "护理多功能示教室2（章贡：护理大楼428）",
+    "dayOfWeek": 2,
+    "startPeriod": 5,
+    "endPeriod": 7,
+    "weeks": [
+      17
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-41",
     "name": "护理伦理与卫生法律法规",
-    "teacher": "廖建红,杨慧娟,陈睿云,王奕",
-    "className": "24级护理4班",
+    "teacher": "陈睿云",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 5,
@@ -472,10 +585,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-74",
+    "id": "kb-42",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "陈睿云",
+    "className": "",
+    "room": "老校区讨论室组（章）（5-1，5-2）(5-1讨论室（章贡）,5-2讨论室（章贡）)",
+    "dayOfWeek": 2,
+    "startPeriod": 5,
+    "endPeriod": 8,
+    "weeks": [
+      7
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-43",
     "name": "老年与康复护理学",
-    "teacher": "陈淑文,潘火英,王萍B,刘明,刘月泉,陈根秀",
-    "className": "24级护理4班",
+    "teacher": "刘月泉",
+    "className": "",
     "room": "19合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 5,
@@ -486,10 +613,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-19",
+    "id": "kb-44",
+    "name": "老年与康复护理学",
+    "teacher": "陈根秀",
+    "className": "",
+    "room": "护理形体训练室（章贡：护理大楼702）",
+    "dayOfWeek": 2,
+    "startPeriod": 5,
+    "endPeriod": 8,
+    "weeks": [
+      8
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-45",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "黄晓峰",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 7,
@@ -500,10 +641,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-67",
+    "id": "kb-46",
     "name": "护理伦理与卫生法律法规",
-    "teacher": "廖建红,杨慧娟,陈睿云,王奕",
-    "className": "24级护理4班",
+    "teacher": "杨慧娟",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 2,
     "startPeriod": 7,
@@ -514,11 +655,25 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-6",
+    "id": "kb-47",
+    "name": "老年与康复护理学",
+    "teacher": "陈根秀",
+    "className": "",
+    "room": "17合班（章贡）",
+    "dayOfWeek": 2,
+    "startPeriod": 7,
+    "endPeriod": 8,
+    "weeks": [
+      1
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-48",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "章贡校区教室组（4-1，4-2）(4-1小班（章贡）,4-2小班（章贡）)",
     "dayOfWeek": 2,
     "startPeriod": 9,
     "endPeriod": 10,
@@ -528,10 +683,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-28",
+    "id": "kb-49",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "刘羽",
+    "className": "",
+    "room": "护理多功能示教室1（章贡：护理大楼328）",
+    "dayOfWeek": 3,
+    "startPeriod": 1,
+    "endPeriod": 4,
+    "weeks": [
+      3
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-50",
+    "name": "外科护理学",
+    "teacher": "江茜",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 1,
@@ -542,10 +711,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-33",
+    "id": "kb-51",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "唐金红",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 1,
@@ -556,10 +725,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-44",
+    "id": "kb-52",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "李莉莉A",
+    "className": "",
     "room": "见习场所8（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 1,
@@ -570,10 +739,39 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-61",
+    "id": "kb-53",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "王奕,廖建红",
+    "className": "",
+    "room": "12合班（章贡）",
+    "dayOfWeek": 3,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      4,
+      11
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-54",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "王奕",
+    "className": "",
+    "room": "护理形体训练室（章贡：护理大楼702）",
+    "dayOfWeek": 3,
+    "startPeriod": 1,
+    "endPeriod": 4,
+    "weeks": [
+      9
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-55",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "12合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 1,
@@ -584,10 +782,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-34",
+    "id": "kb-56",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "唐金红",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 3,
@@ -598,11 +796,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-45",
+    "id": "kb-57",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "杨千绮",
+    "className": "",
+    "room": "章贡区教室组（2-1，2-2）(2-1小班（章贡）,2-2小班（章贡）)",
     "dayOfWeek": 3,
     "startPeriod": 3,
     "endPeriod": 4,
@@ -612,10 +810,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-58",
+    "id": "kb-58",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 3,
@@ -626,11 +824,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-53",
+    "id": "kb-59",
     "name": "精神科护理学",
-    "teacher": "罗珍,待定101,袁水莲（外聘）,江茜,待定106,郑亚楠,待定104,林莉,焦昊然,待定103,温世萍（外聘）",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "温世萍（外聘）",
+    "className": "",
+    "room": "11合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 3,
     "endPeriod": 4,
@@ -640,10 +838,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-17",
+    "id": "kb-60",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "黄晓峰",
+    "className": "",
     "room": "17合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 5,
@@ -654,10 +852,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-22",
+    "id": "kb-61",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "鲁玉凤",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 5,
@@ -668,10 +866,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-12",
+    "id": "kb-62",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "护理多功能示教室1（章贡：护理大楼328）",
+    "dayOfWeek": 3,
+    "startPeriod": 5,
+    "endPeriod": 7,
+    "weeks": [
+      8
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-63",
+    "name": "急危重症护理学",
+    "teacher": "谢艳梅",
+    "className": "",
     "room": "18合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 5,
@@ -682,10 +894,38 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-55",
+    "id": "kb-64",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "赖相燕",
+    "className": "",
+    "room": "护理多功能示教室2（章贡：护理大楼428）",
+    "dayOfWeek": 3,
+    "startPeriod": 5,
+    "endPeriod": 7,
+    "weeks": [
+      13
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-65",
+    "name": "外科护理学",
+    "teacher": "祁欢",
+    "className": "",
+    "room": "4-1小班（章贡）",
+    "dayOfWeek": 3,
+    "startPeriod": 7,
+    "endPeriod": 8,
+    "weeks": [
+      15
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-66",
+    "name": "护理心理学",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 7,
@@ -696,10 +936,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-64",
+    "id": "kb-67",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "王奕",
+    "className": "",
     "room": "17合班（章贡）",
     "dayOfWeek": 3,
     "startPeriod": 9,
@@ -710,10 +950,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-24",
+    "id": "kb-68",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "刘慧莲",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 1,
@@ -724,11 +964,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-10",
+    "id": "kb-69",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
-    "room": "19合班（章贡）",
+    "teacher": "幸莉萍",
+    "className": "",
+    "room": "章贡校区教室组（4-1，4-2）(4-1小班（章贡）,4-2小班（章贡）)",
     "dayOfWeek": 4,
     "startPeriod": 1,
     "endPeriod": 2,
@@ -738,10 +978,38 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-63",
+    "id": "kb-70",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "王奕",
+    "className": "",
+    "room": "老校区讨论室组（章）（5-1，5-2）(5-1讨论室（章贡）,5-2讨论室（章贡）)",
+    "dayOfWeek": 4,
+    "startPeriod": 1,
+    "endPeriod": 4,
+    "weeks": [
+      12
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-71",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
+    "room": "11合班（章贡）",
+    "dayOfWeek": 4,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      7
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-72",
+    "name": "护理心理学",
+    "teacher": "许金仙",
+    "className": "",
     "room": "17合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 1,
@@ -752,10 +1020,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-59",
+    "id": "kb-73",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 3,
@@ -766,10 +1034,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-73",
+    "id": "kb-74",
     "name": "老年与康复护理学",
-    "teacher": "陈淑文,潘火英,王萍B,刘明,刘月泉,陈根秀",
-    "className": "24级护理4班",
+    "teacher": "潘火英",
+    "className": "",
     "room": "17合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 3,
@@ -780,10 +1048,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-20",
+    "id": "kb-75",
+    "name": "传染病护理学",
+    "teacher": "胡嘉敏",
+    "className": "",
+    "room": "线上教学1（章）",
+    "dayOfWeek": 4,
+    "startPeriod": 5,
+    "endPeriod": 8,
+    "weeks": [
+      13
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-76",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "黄晓峰,钟惠琴",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 5,
@@ -795,10 +1077,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-13",
+    "id": "kb-77",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "夏梅",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 5,
@@ -809,10 +1091,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-56",
+    "id": "kb-78",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 5,
@@ -823,11 +1105,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-18",
+    "id": "kb-79",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "黄晓峰",
+    "className": "",
+    "room": "章贡校区教室组（4-1，4-2）(4-1小班（章贡）,4-2小班（章贡）)",
     "dayOfWeek": 4,
     "startPeriod": 7,
     "endPeriod": 8,
@@ -837,10 +1119,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-57",
+    "id": "kb-80",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 4,
     "startPeriod": 7,
@@ -848,15 +1130,58 @@
     "weeks": [
       3,
       4,
+      7,
       8
     ],
     "remindEnabled": true
   },
   {
-    "id": "jw-8",
+    "id": "kb-81",
+    "name": "护理伦理与卫生法律法规",
+    "teacher": "刘小花",
+    "className": "",
+    "room": "19合班（章贡）",
+    "dayOfWeek": 4,
+    "startPeriod": 9,
+    "endPeriod": 10,
+    "weeks": [
+      13
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-82",
+    "name": "外科护理学",
+    "teacher": "夏梅",
+    "className": "",
+    "room": "护理多功能示教室1（章贡：护理大楼328）",
+    "dayOfWeek": 5,
+    "startPeriod": 1,
+    "endPeriod": 4,
+    "weeks": [
+      12
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-83",
+    "name": "外科护理学",
+    "teacher": "钟惠琴",
+    "className": "",
+    "room": "老校区讨论室组（章）（5-1，5-2）(5-1讨论室（章贡）,5-2讨论室（章贡）)",
+    "dayOfWeek": 5,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      17
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-84",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
+    "teacher": "温艳萍,吴勤",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 1,
@@ -868,10 +1193,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-48",
+    "id": "kb-85",
     "name": "精神科护理学",
-    "teacher": "罗珍,待定101,袁水莲（外聘）,江茜,待定106,郑亚楠,待定104,林莉,焦昊然,待定103,温世萍（外聘）",
-    "className": "24级护理4班",
+    "teacher": "林莉",
+    "className": "",
     "room": "见习场所11（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 1,
@@ -882,10 +1207,38 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-30",
+    "id": "kb-86",
+    "name": "老年与康复护理学",
+    "teacher": "刘月泉",
+    "className": "",
+    "room": "见习场所8（章贡）",
+    "dayOfWeek": 5,
+    "startPeriod": 1,
+    "endPeriod": 4,
+    "weeks": [
+      7
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-87",
+    "name": "老年与康复护理学",
+    "teacher": "刘月泉",
+    "className": "",
+    "room": "护理多功能示教室2（章贡：护理大楼428）",
+    "dayOfWeek": 5,
+    "startPeriod": 1,
+    "endPeriod": 4,
+    "weeks": [
+      9
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-88",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "江茜",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 3,
@@ -896,10 +1249,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-60",
+    "id": "kb-89",
+    "name": "外科护理学",
+    "teacher": "黄晓峰",
+    "className": "",
+    "room": "2-1小班（章贡）",
+    "dayOfWeek": 5,
+    "startPeriod": 3,
+    "endPeriod": 4,
+    "weeks": [
+      14
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-90",
     "name": "护理心理学",
-    "teacher": "许金仙,叶红燕,王奕",
-    "className": "24级护理4班",
+    "teacher": "许金仙",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 3,
@@ -911,10 +1278,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-43",
+    "id": "kb-91",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "夏梅",
+    "className": "",
+    "room": "老校区讨论室组（章）（5-1，5-2）(5-1讨论室（章贡）,5-2讨论室（章贡）)",
+    "dayOfWeek": 5,
+    "startPeriod": 5,
+    "endPeriod": 6,
+    "weeks": [
+      13
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-92",
+    "name": "外科护理学",
+    "teacher": "尹玲",
+    "className": "",
     "room": "见习场所8（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 5,
@@ -925,10 +1306,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-46",
+    "id": "kb-93",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "杨千绮",
+    "className": "",
     "room": "见习场所7（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 5,
@@ -939,10 +1320,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-52",
+    "id": "kb-94",
     "name": "精神科护理学",
-    "teacher": "罗珍,待定101,袁水莲（外聘）,江茜,待定106,郑亚楠,待定104,林莉,焦昊然,待定103,温世萍（外聘）",
-    "className": "24级护理4班",
+    "teacher": "焦昊然",
+    "className": "",
     "room": "19合班（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 5,
@@ -953,10 +1334,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-41",
+    "id": "kb-95",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "夏梅",
+    "className": "",
     "room": "15合班（章贡）",
     "dayOfWeek": 5,
     "startPeriod": 7,
@@ -967,11 +1348,11 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-11",
+    "id": "kb-96",
     "name": "急危重症护理学",
-    "teacher": "幸莉萍,温艳萍,夏梅,张小清,吴勤,孟利敏,谢艳梅",
-    "className": "24级护理4班",
-    "room": "未填教室",
+    "teacher": "幸莉萍",
+    "className": "",
+    "room": "章贡区教室组（2-1，2-2）(2-1小班（章贡）,2-2小班（章贡）)",
     "dayOfWeek": 5,
     "startPeriod": 7,
     "endPeriod": 8,
@@ -981,10 +1362,24 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-51",
+    "id": "kb-97",
+    "name": "急危重症护理学",
+    "teacher": "温艳萍",
+    "className": "",
+    "room": "护理多功能示教室2（章贡：护理大楼428）",
+    "dayOfWeek": 6,
+    "startPeriod": 1,
+    "endPeriod": 3,
+    "weeks": [
+      9
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-98",
     "name": "精神科护理学",
-    "teacher": "罗珍,待定101,袁水莲（外聘）,江茜,待定106,郑亚楠,待定104,林莉,焦昊然,待定103,温世萍（外聘）",
-    "className": "24级护理4班",
+    "teacher": "郑亚楠",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 6,
     "startPeriod": 3,
@@ -995,10 +1390,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-25",
+    "id": "kb-99",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "谢文B",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 6,
     "startPeriod": 5,
@@ -1009,10 +1404,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-31",
+    "id": "kb-100",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "江茜",
+    "className": "",
     "room": "见习场所11（章贡）",
     "dayOfWeek": 6,
     "startPeriod": 5,
@@ -1023,10 +1418,10 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-40",
+    "id": "kb-101",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "夏梅",
+    "className": "",
     "room": "16合班（章贡）",
     "dayOfWeek": 6,
     "startPeriod": 5,
@@ -1037,10 +1432,66 @@
     "remindEnabled": true
   },
   {
-    "id": "jw-47",
+    "id": "kb-102",
+    "name": "老年与康复护理学",
+    "teacher": "王萍B",
+    "className": "",
+    "room": "见习场所8（章贡）",
+    "dayOfWeek": 6,
+    "startPeriod": 5,
+    "endPeriod": 8,
+    "weeks": [
+      6
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-103",
+    "name": "急危重症护理学",
+    "teacher": "张小清",
+    "className": "",
+    "room": "12合班（章贡）",
+    "dayOfWeek": 6,
+    "startPeriod": 7,
+    "endPeriod": 8,
+    "weeks": [
+      3
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-104",
     "name": "外科护理学",
-    "teacher": "李莉莉A,唐金红,张文红,许雪花,邓作梅,刘慧莲,江茜,鲁玉凤,杨千绮,王欣,祁欢,尹玲,谢文B,黄晓峰,曾群英,钟惠琴,夏梅,刘群A",
-    "className": "24级护理4班",
+    "teacher": "江茜",
+    "className": "",
+    "room": "2-2小班（章贡）",
+    "dayOfWeek": 7,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      6
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-105",
+    "name": "外科护理学",
+    "teacher": "杨千绮",
+    "className": "",
+    "room": "11合班（章贡）",
+    "dayOfWeek": 7,
+    "startPeriod": 1,
+    "endPeriod": 2,
+    "weeks": [
+      16
+    ],
+    "remindEnabled": true
+  },
+  {
+    "id": "kb-106",
+    "name": "外科护理学",
+    "teacher": "王欣",
+    "className": "",
     "room": "11合班（章贡）",
     "dayOfWeek": 7,
     "startPeriod": 3,

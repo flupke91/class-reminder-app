@@ -233,9 +233,62 @@ async function initApp() {
 
   // Initialize keep-alive engine (only if there are upcoming classes)
   await initKeepAliveEngine();
+
+  // 启动时钟驱动：之后每天、每分钟界面会自己更新
+  startClock();
 }
 
 // ==================== 保活引擎 JS 桥接 ====================
+
+// ==================== 时钟驱动：让界面跟着日期/时间自己走 ====================
+// 之前整个 App 没有任何定时刷新，renderAll() 只在用户点按钮时才执行。
+// 结果：App 挂在后台跨过午夜后，界面（日期、“今日剩余”、周次高亮）还停在前一天，
+// 表现就是「今天还显示昨天的课」。这里补轮询 + 前台/恢复监听。
+let clockTimerId = null;
+let lastClockKey = "";
+
+function tickClock(force) {
+  const now = new Date();
+  const day = toISODate(now);
+  const key = `${day}|${now.getHours()}:${now.getMinutes()}`;
+  if (!force && key === lastClockKey) return;
+  const prevDay = lastClockKey.split("|")[0];
+  lastClockKey = key;
+
+  if (day !== prevDay) {
+    // 跨天了：整屏重绘，并且重排当天的定时提醒（否则新的一天没有任何提醒）
+    renderAll();
+    if (liveReminderEnabled) scheduleTodayReminders();
+  } else {
+    // 同一天内只刷新随时间变化的部分，避免动到用户正在浏览的周次
+    renderReminderSnapshot();
+    updateStaleTermNotice();
+  }
+}
+
+function startClock() {
+  lastClockKey = "";
+  tickClock(true);
+  if (clockTimerId) clearInterval(clockTimerId);
+  clockTimerId = setInterval(() => tickClock(false), 20000);
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) tickClock(false);
+  });
+  window.addEventListener("focus", () => tickClock(false));
+  window.addEventListener("pageshow", () => tickClock(false));
+
+  // 原生环境：从后台回到前台 / 解锁屏
+  try {
+    const App = window.Capacitor?.Plugins?.App;
+    if (App?.addListener) {
+      App.addListener("appStateChange", (s) => { if (s?.isActive) tickClock(false); });
+      App.addListener("resume", () => tickClock(false));
+    }
+  } catch (e) {
+    console.warn("App lifecycle listener error:", e);
+  }
+}
 
 async function initKeepAliveEngine() {
   const NN = window.Capacitor?.Plugins?.NativeNotification;
