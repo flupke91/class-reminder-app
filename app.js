@@ -72,69 +72,6 @@ const COURSE_COLORS = [
 
 const WEEKDAY_CN = ["一", "二", "三", "四", "五", "六", "日"];
 
-const SAMPLE_COURSES = [
-  {
-    id: "c1",
-    name: "内科护理学（理论）",
-    teacher: "谢全胜",
-    className: "301中班",
-    room: "蓉江一教",
-    dayOfWeek: 1,
-    startPeriod: 1,
-    endPeriod: 2,
-    weeks: [1, 2, 3, 4, 5],
-    remindEnabled: true,
-  },
-  {
-    id: "c2",
-    name: "英语（理论）",
-    teacher: "刘振优",
-    className: "315中班",
-    room: "蓉江一教",
-    dayOfWeek: 2,
-    startPeriod: 3,
-    endPeriod: 4,
-    weeks: [1, 2, 3, 4, 5],
-    remindEnabled: true,
-  },
-  {
-    id: "c3",
-    name: "预防医学实验",
-    teacher: "张老师",
-    className: "sps5-8",
-    room: "实验室组2",
-    dayOfWeek: 1,
-    startPeriod: 5,
-    endPeriod: 6,
-    weeks: [1, 2, 3, 4],
-    remindEnabled: true,
-  },
-  {
-    id: "c4",
-    name: "习近平新时代中国特色社会主义思想概论",
-    teacher: "王老师",
-    className: "理论001",
-    room: "蓉江二教",
-    dayOfWeek: 4,
-    startPeriod: 5,
-    endPeriod: 6,
-    weeks: [1, 2, 3, 4, 5],
-    remindEnabled: true,
-  },
-  {
-    id: "c5",
-    name: "体育",
-    teacher: "赵老师",
-    className: "第四组",
-    room: "A-02",
-    dayOfWeek: 3,
-    startPeriod: 7,
-    endPeriod: 8,
-    weeks: [1, 3, 5],
-    remindEnabled: true,
-  },
-];
-
 const defaultState = {
   settings: {
     morningTime: "08:00",
@@ -147,7 +84,7 @@ const defaultState = {
   },
   selectedWeekOffset: 0,
   liveReminderEnabled: false,
-  courses: SAMPLE_COURSES,
+  courses: [],
 };
 
 let state = JSON.parse(JSON.stringify(defaultState));
@@ -406,41 +343,53 @@ function normalizeAssetRows(data) {
   }));
 }
 
+// 读取 App 内置的权威课表（courses-final.json），返回规范化后的课程数组。
+// 首次启动自动导入和「恢复内置课表」按钮共用这一份逻辑。
+async function importBuiltinCourses() {
+  const resp = await fetch("courses-final.json");
+  if (!resp.ok) throw new Error("内置课表读取失败（HTTP " + resp.status + "）");
+  const data = await resp.json();
+  if (!Array.isArray(data) || data.length === 0) throw new Error("内置课表为空");
+
+  // 关键：先走 normalizeCourse 补全 id / className / remindEnabled，
+  // 再用 mergeDuplicateCourses 按「课程+时间+教室」合并周次。
+  // 以前这里手写分组把 teacher 也算进 key，多位教师轮班上课时同一节课会被切成几十条碎片。
+  const parsed = normalizeAssetRows(data).map(normalizeCourse).filter(Boolean);
+  if (!parsed.length) throw new Error("内置课表解析失败");
+
+  return mergeDuplicateCourses(parsed).map((c, idx) => ({
+    ...c,
+    id: c.id || `asset-${idx}`,
+    remindEnabled: c.remindEnabled !== false,
+  }));
+}
+
 async function autoImportOnFirstRun() {
   const existing = await loadStateFromStorage();
-  if (existing && existing.courses && existing.courses.length > 0) {
+
+  // 旧版本有个「加载示例课表」按钮，点了会把真课表冲成 5 条假数据（id 形如 c1~c5）。
+  // 碰到这种情况直接换回内置课表，不用用户手动点。
+  const isSampleData =
+    existing &&
+    Array.isArray(existing.courses) &&
+    existing.courses.length > 0 &&
+    existing.courses.every((c) => /^c\d+$/.test(String(c.id || "")));
+
+  if (existing && existing.courses && existing.courses.length > 0 && !isSampleData) {
     renderAll();
     return;
   }
+
   try {
-    const resp = await fetch("courses-final.json");
-    if (!resp.ok) {
-      renderAll();
-      return;
-    }
-    const data = await resp.json();
-    if (!Array.isArray(data) || data.length === 0) {
-      renderAll();
-      return;
-    }
-
-    // 关键：先走 normalizeCourse 补全 id / className / remindEnabled，
-    // 再用 mergeDuplicateCourses 按「课程+时间+教室」合并周次。
-    // 以前这里手写分组把 teacher 也算进 key，多位教师轮班上课时同一节课会被切成几十条碎片。
-    const parsed = normalizeAssetRows(data).map(normalizeCourse).filter(Boolean);
-    if (!parsed.length) {
-      renderAll();
-      return;
-    }
-
-    state.courses = mergeDuplicateCourses(parsed).map((c, idx) => ({
-      ...c,
-      id: c.id || `asset-${idx}`,
-      remindEnabled: c.remindEnabled !== false,
-    }));
+    state.courses = await importBuiltinCourses();
     persistAndRender();
-    appendLog(`已自动导入课表数据（${state.courses.length} 条）`);
-  } catch {
+    appendLog(
+      isSampleData
+        ? `检测到示例课表，已还原为内置课表（${state.courses.length} 条）`
+        : `已自动导入课表数据（${state.courses.length} 条）`
+    );
+  } catch (e) {
+    appendLog("自动导入内置课表失败：" + (e?.message || e));
     renderAll();
   }
 }
@@ -470,11 +419,23 @@ function bindEvents() {
 
   document.getElementById("importBtn").addEventListener("click", handleImport);
 
-  document.getElementById("loadSampleBtn").addEventListener("click", () => {
-    state.courses = JSON.parse(JSON.stringify(SAMPLE_COURSES));
-    persistAndRender();
-    appendLog("已加载示例课表");
-  });
+  // 「恢复内置课表」：误操作清空课程后，用它把 App 内置的权威课表重新灌回来。
+  const restoreBuiltinBtn = document.getElementById("restoreBuiltinBtn");
+  if (restoreBuiltinBtn) {
+    restoreBuiltinBtn.addEventListener("click", async () => {
+      restoreBuiltinBtn.disabled = true;
+      try {
+        const courses = await importBuiltinCourses();
+        state.courses = courses;
+        persistAndRender();
+        appendLog(`已恢复内置课表（${courses.length} 条）`);
+      } catch (e) {
+        appendLog("恢复内置课表失败：" + (e?.message || e));
+      } finally {
+        restoreBuiltinBtn.disabled = false;
+      }
+    });
+  }
 
   document.getElementById("simulateReminderBtn").addEventListener("click", async () => {
     const NN = window.Capacitor?.Plugins?.NativeNotification;
@@ -1303,6 +1264,14 @@ async function handleImport() {
     if (!importedCourses.length) {
       alert("未识别到课程，请检查格式");
       return;
+    }
+
+    // 覆盖是不可撤销的（没有撤销栈），先拦一道，避免又一点就把真课表冲掉。
+    if (state.courses.length > 0) {
+      const ok = confirm(
+        `导入会覆盖当前已有的 ${state.courses.length} 条课程，确定继续吗？\n（误清了可以点「恢复内置课表」还原）`
+      );
+      if (!ok) return;
     }
 
     state.courses = mergeDuplicateCourses(importedCourses).map((c, idx) => ({
