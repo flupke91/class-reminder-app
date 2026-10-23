@@ -131,8 +131,9 @@
       </form>
     </dialog>
 
-    <!-- xlsx 解析库本地打包：离线/校园网访问不到 CDN 时也能用；加载失败由 app.js 兜底回退 CDN -->
-    <script src="./vendor/xlsx.full.min.js"></script>
-    <script src="./app.js?v=5"></script>
+    <!-- xlsx 解析库改为按需加载：app.js 的 ensureXlsx() 会在真正导入 Excel 时
+         先试本地 ./vendor/xlsx.full.min.js，再回退 CDN。
+         此前把它写成阻塞 <script>，等于每次打开都要先下 861KB 才轮到 app.js 执行。 -->
+    <script src="./app.js?v=6"></script>
   </body>
 </html>

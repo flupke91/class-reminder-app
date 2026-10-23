@@ -1,14 +1,22 @@
 {
   "name": "class-reminder-app",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "上课啦 · 课表提醒 Web/PWA 与 Android App：多格式课表导入（JSON / iCal / XLSX / OCR / 教务系统直抓）、浏览器与原生双通道提醒、一键校准周次",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tools/test-parsers.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "timetable",
+    "class-schedule",
+    "pwa",
+    "capacitor",
+    "chaoxing",
+    "ical",
+    "notifications"
+  ],
+  "author": "Qifeng Fan",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "@capacitor/android": "^8.3.4",

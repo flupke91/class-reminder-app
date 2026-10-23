@@ -1,6 +1,10 @@
 # 上课啦 (Class Bell)
 
-一个简洁的课程提醒 Web 应用，支持多种课表导入格式，提供浏览器通知提醒功能。
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Android-blue.svg)
+![No build step](https://img.shields.io/badge/build-none%20required-success.svg)
+
+课表提醒工具：Web / PWA 直接打开就能用，也能打包成 Android App。支持 JSON / iCal / Excel / OCR 四种导入方式，以及赣南医科大学教务系统扫码直抓；提醒走浏览器通知与 Android 原生 AlarmManager 双通道，杀进程也能响。
 
 ## 功能特性
 
@@ -32,7 +36,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/class-reminder-app.git
+git clone https://github.com/flupke91/class-reminder-app.git
 
 # 进入项目目录
 cd class-reminder-app
@@ -110,8 +114,27 @@ npx cap open android
 ## 开发
 
 ```bash
-node tools/test-parsers.js   # 回归测试：课表合并、字段校验、周次检测
+npm test                     # 等同 node tools/test-parsers.js
 ```
+
+回归测试覆盖两个真实踩过的坑（多教师轮班导致同一节课被切碎、自动导入的数据没走
+`normalizeCourse` 而缺字段），外加基于 `courses-final.json` 的真实课表冒烟测试。
+纯 Node 运行，不需要浏览器环境。
+
+## 项目结构
+
+```text
+index.html / app.js / styles.css   全部产品代码（无构建步骤，原生 ES6 + CSS）
+vendor/xlsx.full.min.js            Excel 解析库，仅在导入 xlsx 时按需加载
+tools/gmu/                         教务系统抓取（扫码登录）
+tools/test-parsers.js              解析函数回归测试
+tools/legacy/                      教务接口探索期的一次性脚本（留档，非运行时依赖）
+skills/gmu-timetable-fetch/        配套智能体 Skill
+android/                           Capacitor 封装的 Android 工程
+```
+
+`vendor/xlsx.full.min.js` 有 861KB，**不在首屏加载**：`app.js` 的 `ensureXlsx()`
+只在真正导入 Excel 时才注入这段脚本（先试本地 `./vendor/`，失败再回退 CDN）。
 
 ## 构建与发布 APK
 
@@ -146,6 +169,28 @@ keyPassword=******
 
 ## 更新记录
 
+### 2026-10-23
+
+首屏与布局修复：
+
+- **Excel 解析库不再拖慢启动**：`vendor/xlsx.full.min.js` 有 861KB，此前以阻塞
+  `<script>` 排在 `app.js` 之前，等于每次打开都要先下完它才能启动。`ensureXlsx()`
+  本来就已经实现了按需加载 + CDN 回退，只是那段阻塞标签一直没删。移除后首屏
+  **少下载 861KB**，且不再产生任何 xlsx 请求。
+- **学期提示条在无需提示时也空占一行**：`.stale-term-notice` 写了 `display: flex`，
+  而作者样式的优先级高于浏览器内置的 `[hidden] { display: none }`，所以 JS 里
+  `el.hidden = true` 完全无效 —— 界面上表现为课表上方一直挂着一根空橙色横条。
+  已补 `[hidden] { display: none !important }` 兜底。
+- **窄屏（390px）周导航折行**：三个切周按钮原本 `flex-wrap: wrap`，第三颗「下一周」
+  被挤到第二行，顶部面板从 44px 撑到 86px；学期名也会断成两行。已改为不折行 +
+  按钮等分宽度 + 学期名 `nowrap`。实测面板高度 86 → 44px，首屏多露出一节课。
+- **背景图滚动重绘**：`background-attachment: fixed` 贴在 `body` 上，移动端每滚动
+  一帧都要重绘整张 1357×1920 图。已挪到 `body::before` 固定图层；同时把背景图
+  从 255KB 压到 142KB（宽 1000px，手机上肉眼无差）。
+- **仓库根目录瘦身**：29 个探索期脚本（`fetch_grid3.js`、`probe2.js` 之类）移入
+  `tools/legacy/` 并补了索引说明，根目录现在只剩 `app.js` 一个脚本。
+- `npm test` 之前是 `exit 1` 占位，现已指向真正能跑的 `tools/test-parsers.js`。
+
 ### 2026-09-18
 
 修复一批课表导入问题（在真实使用中踩到的）：
@@ -173,10 +218,10 @@ keyPassword=******
 
 ## 技术栈
 
-- HTML5 / CSS3 / JavaScript (ES6+)
+- HTML5 / CSS3 / JavaScript (ES6+)，无打包步骤
 - Capacitor (Android 原生封装)
-- SheetJS (Excel 文件解析)
+- SheetJS (Excel 文件解析，按需加载)
 
 ## 许可证
 
-ISC License
+[MIT](LICENSE)

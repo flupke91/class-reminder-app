@@ -19,18 +19,33 @@
   box-sizing: border-box;
 }
 
+/* 作者样式里的 display 会盖掉浏览器内置的 [hidden]{display:none}，
+   导致 JS 设了 el.hidden = true 也藏不住（.stale-term-notice 就是这么
+   在没提示的时候还画出一根空橙色横条的）。这里统一兜住。 */
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  background: url('./bg.jpg') center/cover no-repeat fixed;
+  background: var(--bg);
   color: var(--text);
 }
 
+/* 背景图挪到固定的伪元素层：原来用 background-attachment: fixed 贴在
+   body 上，移动端 WebView 每滚动一帧都要重绘整张 1357×1920 图。
+   改成 fixed 定位的图层后只在合成层里挪，不再跟着滚动重绘。 */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(255,255,255,0.35);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
+    url('./bg.jpg');
+  background-position: center, center;
+  background-size: auto, cover;
+  background-repeat: no-repeat, no-repeat;
   z-index: -1;
 }
 
@@ -118,6 +133,7 @@ body::before {
 .term-name {
   font-size: 24px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .week-label {
@@ -413,6 +429,23 @@ menu {
 
   .term-name {
     font-size: 18px;
+  }
+
+  /* 390px 宽时三个切周按钮原本 flex-wrap 折成两行（实测 .week-actions
+     高 86px，"下一周"被挤到第二行），顶部面板被撑到 176px。改成不折行 +
+     让按钮等分剩余宽度。 */
+  .week-actions {
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    gap: 6px;
+  }
+
+  .week-actions button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 8px 4px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .row {
