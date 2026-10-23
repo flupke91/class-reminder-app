@@ -110,6 +110,21 @@ const els = {
 };
 
 bindEvents();
+/**
+ * 注册 Service Worker —— 没有它 Chrome 不会把本页当成「可安装的 PWA」，
+ * README 里那句「可安装到桌面」就落不了地（只能添加成普通网页快捷方式）。
+ * file:// 下没有 SW，直接跳过（Android 壳走 https://localhost，可以正常注册）。
+ */
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  if (!/^https?:$/.test(location.protocol)) return;
+  navigator.serviceWorker.register("./sw.js").catch((err) => {
+    console.warn("Service Worker 注册失败（不影响使用）：", err && err.message);
+  });
+}
+
+registerServiceWorker();
+
 initApp();
 
 async function initApp() {

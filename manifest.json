@@ -1,9 +1,32 @@
 {
-  "name": "课程提醒",
-  "short_name": "课程提醒",
+  "name": "上课啦 · 课程提醒",
+  "short_name": "上课啦",
+  "description": "课表提醒：多格式导入、按周查看、上课与换课提醒",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#eef2f4",
   "theme_color": "#48d6c1",
-  "lang": "zh-CN"
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }

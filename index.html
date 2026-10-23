@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Class Bell</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -134,6 +135,6 @@
     <!-- xlsx 解析库改为按需加载：app.js 的 ensureXlsx() 会在真正导入 Excel 时
          先试本地 ./vendor/xlsx.full.min.js，再回退 CDN。
          此前把它写成阻塞 <script>，等于每次打开都要先下 861KB 才轮到 app.js 执行。 -->
-    <script src="./app.js?v=6"></script>
+    <script src="./app.js?v=7"></script>
   </body>
 </html>

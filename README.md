@@ -24,7 +24,7 @@
   - **一键校准周次**（学期过期时会出现醒目提示）
   - 手动标记节假日/停课日
   - 单独控制每门课程的提醒开关
-- **PWA 支持**：可安装到桌面使用
+- **PWA 支持**：带 Service Worker 与 192/512 图标，可真正安装到桌面或主屏（离线也能打开课表）
 
 ## 快速开始
 
@@ -57,7 +57,8 @@ npm install
 
 # 构建 Web 资源（vendor/xlsx 也要一起，离线才能用 Excel 导入）
 mkdir -p www/vendor
-cp index.html app.js styles.css favicon.svg manifest.json bg.jpg courses-final.json www/
+cp index.html app.js sw.js styles.css favicon.svg manifest.json bg.jpg courses-final.json www/
+cp icon-192.png icon-512.png www/
 cp vendor/xlsx.full.min.js www/vendor/
 
 # 添加 Android 平台
@@ -125,6 +126,8 @@ npm test                     # 等同 node tools/test-parsers.js
 
 ```text
 index.html / app.js / styles.css   全部产品代码（无构建步骤，原生 ES6 + CSS）
+sw.js                              Service Worker：导航 network-first / 静态 cache-first
+manifest.json + icon-192/512.png   PWA 清单与图标（缺任一项 Chrome 就不认可安装）
 vendor/xlsx.full.min.js            Excel 解析库，仅在导入 xlsx 时按需加载
 tools/gmu/                         教务系统抓取（扫码登录）
 tools/test-parsers.js              解析函数回归测试
@@ -190,6 +193,15 @@ keyPassword=******
 - **仓库根目录瘦身**：29 个探索期脚本（`fetch_grid3.js`、`probe2.js` 之类）移入
   `tools/legacy/` 并补了索引说明，根目录现在只剩 `app.js` 一个脚本。
 - `npm test` 之前是 `exit 1` 占位，现已指向真正能跑的 `tools/test-parsers.js`。
+
+### 2026-10-23（二）
+
+- **「可安装到桌面」其实一直是假的**：README 从很早就写着 PWA 支持，但仓库里
+  既没有 `sw.js`、`manifest.json` 也没有 `icons` —— Chrome 判定可安装的三个条件
+  全都没满足，用户点「添加到主屏幕」拿到的只是普通网页快捷方式。
+  现在补了 `sw.js`（导航 network-first、静态 cache-first，`/api` 不拦）、
+  `manifest.json` 补 192/512/maskable 图标、`app.js` 里注册并在非 http(s) 环境跳过。
+  用 CDP `Page.getInstallabilityErrors` 验证：除测试环境的 `in-incognito` 外无其他错误。
 
 ### 2026-09-18
 
