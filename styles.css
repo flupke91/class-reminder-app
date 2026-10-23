@@ -265,10 +265,25 @@ textarea {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2px;
   color: #4b5563;
   font-weight: 700;
+  line-height: 1.15;
+}
+
+.period-label .pl-num {
+  font-size: 15px;
+}
+
+/* 节次对应的开课时间，弱化显示，不抢节次数字的注意力 */
+.period-label .pl-time {
+  font-size: 10px;
+  font-weight: 500;
+  color: #9aa3af;
+  letter-spacing: -0.2px;
 }
 
 .grid-cell {

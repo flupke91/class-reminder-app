@@ -590,7 +590,10 @@ function renderGrid() {
     pl.className = "period-label";
     pl.style.gridColumn = "1";
     pl.style.gridRow = `${period}`;
-    pl.textContent = String(period);
+    // 节次列补上开课时间：只看 "1 2 3" 判断不出第 1 节是 8:30 还是 8:00
+    pl.innerHTML =
+      `<span class="pl-num">${period}</span>` +
+      `<span class="pl-time">${PERIOD_TIMES[period] ? PERIOD_TIMES[period][0] : ""}</span>`;
     els.timetableGrid.appendChild(pl);
 
     for (let day = 1; day <= 7; day += 1) {
