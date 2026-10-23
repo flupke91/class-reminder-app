@@ -320,9 +320,36 @@ textarea {
 }
 
 .empty-notice {
-  padding: 14px;
+  margin: 12px;
+  padding: 22px 18px;
   text-align: center;
   color: var(--muted);
+  /* 这里比其它卡片更实一点：引导文案要在插画背景上读得清 */
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.empty-icon {
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.empty-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.empty-text {
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.empty-notice .primary-btn {
+  padding: 10px 22px;
+  font-size: 14px;
 }
 
 .reminder-header {

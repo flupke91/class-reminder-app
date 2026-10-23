@@ -71,12 +71,20 @@
 
       <section id="staleTermNotice" class="stale-term-notice" hidden></section>
 
-      <section class="timetable-panel">
-        <div id="timetableGrid" class="timetable-grid"></div>
+      <!-- 空状态必须排在课表网格「上面」：原先它在 10 行空网格之后，
+           首屏根本看不到，等于没有引导。 -->
+      <section id="emptyNotice" class="empty-notice" hidden>
+        <div class="empty-icon" aria-hidden="true">🗓️</div>
+        <h2 class="empty-title">本周还没有课程</h2>
+        <p class="empty-text">
+          导入课表后就能看到每周课程、上课提醒和换课提醒。<br />
+          支持 JSON / iCal / Excel / OCR 文本，也可以从教务系统抓取。
+        </p>
+        <button id="emptyImportBtn" class="primary-btn" type="button">导入课表</button>
       </section>
 
-      <section id="emptyNotice" class="empty-notice" hidden>
-        当前周暂无课程数据，可导入课表，或点「恢复内置课表」还原。
+      <section class="timetable-panel">
+        <div id="timetableGrid" class="timetable-grid"></div>
       </section>
 
       <section class="reminder-panel">
@@ -135,6 +143,6 @@
     <!-- xlsx 解析库改为按需加载：app.js 的 ensureXlsx() 会在真正导入 Excel 时
          先试本地 ./vendor/xlsx.full.min.js，再回退 CDN。
          此前把它写成阻塞 <script>，等于每次打开都要先下 861KB 才轮到 app.js 执行。 -->
-    <script src="./app.js?v=7"></script>
+    <script src="./app.js?v=8"></script>
   </body>
 </html>

@@ -434,6 +434,20 @@ function bindEvents() {
 
   document.getElementById("importBtn").addEventListener("click", handleImport);
 
+  // 空状态里的「导入课表」：展开导入面板并滚过去，别让用户自己找
+  const emptyImportBtn = document.getElementById("emptyImportBtn");
+  if (emptyImportBtn) {
+    emptyImportBtn.addEventListener("click", () => {
+      const details = document.querySelector(".import-panel details");
+      if (details) {
+        details.open = true;
+        details.scrollIntoView({ behavior: "smooth", block: "center" });
+        const fileInput = document.getElementById("importFile");
+        if (fileInput) setTimeout(() => fileInput.focus({ preventScroll: true }), 300);
+      }
+    });
+  }
+
   // 「恢复内置课表」：误操作清空课程后，用它把 App 内置的权威课表重新灌回来。
   const restoreBuiltinBtn = document.getElementById("restoreBuiltinBtn");
   if (restoreBuiltinBtn) {
@@ -652,6 +666,22 @@ function renderGrid() {
   });
 
   els.emptyNotice.hidden = displayCourses.length > 0;
+
+  // 文案分两种：一条课都没有（首次使用，需要引导去导入）vs 本周恰好没课
+  // （已经有课表了，只需要提示切周次）。
+  if (!els.emptyNotice.hidden) {
+    const noneAtAll = state.courses.length === 0;
+    const title = els.emptyNotice.querySelector(".empty-title");
+    const text = els.emptyNotice.querySelector(".empty-text");
+    if (title) title.textContent = noneAtAll ? "本周还没有课程" : "本周没有课";
+    if (text) {
+      text.innerHTML = noneAtAll
+        ? "导入课表后就能看到每周课程、上课提醒和换课提醒。<br />支持 JSON / iCal / Excel / OCR 文本，也可以从教务系统抓取。"
+        : "课表里已有课程，只是第 " + currentWeek + " 周没有安排。<br />用上方「上一周 / 下一周」翻一下，或点「回到本周」。";
+    }
+    const btn = document.getElementById("emptyImportBtn");
+    if (btn) btn.hidden = !noneAtAll;
+  }
 }
 
 function renderReminderSnapshot() {
