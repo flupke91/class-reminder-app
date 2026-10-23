@@ -194,6 +194,14 @@ keyPassword=******
   `tools/legacy/` 并补了索引说明，根目录现在只剩 `app.js` 一个脚本。
 - `npm test` 之前是 `exit 1` 占位，现已指向真正能跑的 `tools/test-parsers.js`。
 
+### 2026-10-23（三）· v1.4
+
+- **版本号终于跟发布线对齐**：`package.json` / `android` 之前停在 `1.1.0`、`versionCode 2`，
+  而 Release 已经发到 v1.3 —— 也就是说 v1.3 那个包装进手机后仍然自称 1.1（已实测
+  `aapt dump badging` 确认）。本次改为 `1.4.0` / `versionCode 4` / `versionName 1.4`。
+- 重新构建 APK（`ClassBell-v1.4-debug.apk`），包含本日的 xlsx 懒加载、PWA、空状态引导、
+  节次时间四项改动。
+
 ### 2026-10-23（二）
 
 - **「可安装到桌面」其实一直是假的**：README 从很早就写着 PWA 支持，但仓库里
